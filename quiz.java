@@ -5,8 +5,6 @@ public class utss extends javax.swing.JFrame {
      */
     public utss() {
         initComponents();
-        tf_nama.setEditable(false);
-        tf_nilai.setEditable(false);
     }
     
     private void hitung(){
