@@ -31,4 +31,6 @@ private void simpanActionPerformed(java.awt.event.ActionEvent evt) {
         hitung();
         String nama = tf_nama.getText();
         tf_nama.setText(String.valueOf(nama));
+        tf_nama.setEditable(false);
+        tf_nilai.setEditable(false);
     }    
