@@ -5,6 +5,10 @@ public class utss extends javax.swing.JFrame {
      */
     public utss() {
         initComponents();
+        JOptionPane.showMessageDialog(null, 
+                    "Nama sama nilai jangan sampai kosong yaa", 
+                    "info", 
+                    JOptionPane.WARNING_MESSAGE);
     }
     
     private void hitung(){
@@ -28,9 +32,27 @@ public class utss extends javax.swing.JFrame {
 
 
 private void simpanActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        hitung();
-        String nama = tf_nama.getText();
-        tf_nama.setText(String.valueOf(nama));
-        tf_nama.setEditable(false);
-        tf_nilai.setEditable(false);
-    }    
+        if(tf_nama.getText().trim().isEmpty() && tf_nilai.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, 
+                    "Nama sama nilai isi duluu", 
+                    "info", 
+                    JOptionPane.WARNING_MESSAGE);
+        }else if(tf_nama.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, 
+                    "Nama isi duluu", 
+                    "info", 
+                    JOptionPane.WARNING_MESSAGE);
+        }else if(tf_nilai.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(null, 
+                    "Nilai isiiiiii", 
+                    "info", 
+                    JOptionPane.WARNING_MESSAGE);
+        }else{
+            hitung();
+            String nama = tf_nama.getText();
+            tf_nama.setText(String.valueOf(nama));
+            tf_nama.setEditable(false);
+            tf_nilai.setEditable(false);
+            simpan.setEnabled(false);
+        }
+    }      
